@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Work | sowendharya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles & Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand-primary': '#14b8a6', // Teal 500
+                        'brand-secondary': '#0f766e', // Teal 700
+                        'dark-bg': '#111827', // Gray 900
+                        'dark-card': '#1f2937', // Gray 800
+                        'light-text': '#f3f4f6', // Gray 100
+                        'medium-text': '#9ca3af', // Gray 400
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for hover effects and navigation links */
+        .work-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .work-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); 
+        }
+        .nav-link::after { 
+            content: ''; 
+            display: block; 
+            width: 0; 
+            height: 2px; 
+            background: #14b8a6; 
+            transition: width .3s; 
+        }
+        .nav-link:hover::after { 
+            width: 100%; 
+        }
+       /* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.modal-content {
+    background-color: #1f2937;
+    border-radius: 0.75rem;
+    width: 90%;
+    height: 90%;
+    max-width: 1200px;
+    overflow: auto;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.close-modal {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    background: rgba(0,0,0,0.7);
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+    transition: all 0.2s ease;
+}
+
+.close-modal:hover {
+    background: rgba(255,255,255,0.2);
+    transform: scale(1.1);
+}
+
+#modal-media-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+    </style>
+</head>
+<body class="bg-dark-bg text-light-text font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 left-0 right-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">SN<span class="text-brand-primary">.</span></a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#home" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Home</a>
+                <a href="projects.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Projects</a>
+                <a href="work.html" class="nav-link text-white font-semibold">Work</a>
+                <a href="blog.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Blog</a>
+                <a href="index.html#about" class="nav-link text-medium-text hover:text-white transition-colors duration-300">About</a>
+                <a href="index.html#contact" class="bg-brand-primary text-white py-2 px-4 rounded-lg hover:bg-brand-secondary transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html#home" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Home</a>
+            <a href="projects.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Projects</a>
+            <a href="work.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Work</a>
+            <a href="blog.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Blog</a>
+            <a href="index.html#about" class="block py-2 px-6 text-medium-text hover:bg-dark-card">About</a>
+            <a href="index.html#contact" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20 mt-16">
+        <div class="text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Design & Side Projects</h1>
+            <p class="text-medium-text max-w-2xl mx-auto mb-12">A collection of my design explorations, UI concepts, and smaller coding projects that showcase my creativity and skills.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Work Item 1 -->
+            <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="fish.jpg" alt="Work 1" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Animated Login Page Development</h3>
+                    <p class="text-medium-text flex-grow">A visually engaging login page featuring a smooth fish animation is created using HTML and CSS. The fish swim subtly in the background, adding a calming, oceanic theme while users enter their credentials.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">HTML</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">CSS</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">JS</span>
+                    </div>
+                      <div class="mt-auto pt-4 border-t border-gray-700/50 flex space-x-4">
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" 
+                            data-type="video" 
+                            data-src="fish .mp4"> <!-- Direct link to your video file -->
+                            Live Demo
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Item 2 -->
+            <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="todo.jpg" alt="Work 2" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Remainder Flicks</h3>
+                    <p class="text-medium-text flex-grow">A modern To-Do app designed in Figma with features of clean, user-friendly interface. The design emphasizes usability with intuitive task input, stylish buttons, and consistent layout elements for seamless productivity.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">API</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50 flex space-x-4">
+                        <a href="todo.mp4" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" data-type="video" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">Live Demo</a>
+        
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Item 3 -->
+            <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="smarthome.jpg" alt="Work 3" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Smart Home Design</h3>
+                    <p class="text-medium-text flex-grow">This Figma design presents a sleek smart home control interface with separate screens for AC settings and connected devices</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Screens</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Design</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="smart.png" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" data-type="image" data-src="https://placehold.co/800x600/1f2937/f3f4f6?text=Branding+Case+Study">View Design Image</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Item 4 -->
+            <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="cake.jpg" alt="Work 4" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Cake Bakes</h3>
+                    <p class="text-medium-text flex-grow">This project marks the beginning of my journey into animation, where I aim to set new trends and continue growing creatively.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Animation</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="https://www.linkedin.com/posts/sowendharya_animation-nerdsniping-figma-activity-7307045164810678272-IVHD?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFCTuM4B0V3CV8AgeMK3yXtJFzwP-UG5i5U" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" data-type="video" data-src="https://www.youtube.com/embed/dQw4w9WgXcQ">Get on Linkedin</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Work Item 5 -->
+            <!-- <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Icon+Set" alt="Work 5" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Custom Icon Set</h3>
+                    <p class="text-medium-text flex-grow">A set of 50 custom-designed icons for a web application project, focusing on a consistent and modern style.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Iconography</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">SVG</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Vector</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" data-type="image" data-src="https://placehold.co/800x600/1f2937/f3f4f6?text=Icon+Set+Preview">View Icon Set</a>
+                    </div>
+                </div>
+            </div> -->
+
+            <!-- Work Item 6 -->
+            <!-- <div class="work-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Illustration" alt="Work 6" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Isometric Illustrations</h3>
+                    <p class="text-medium-text flex-grow">A series of isometric illustrations for a website landing page to explain complex features visually.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Illustration</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Isometric</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold demo-link" data-type="image" data-src="https://placehold.co/800x600/1f2937/f3f4f6?text=Illustration+Gallery">View Project</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <!-- Modal Overlay -->
+    <div id="demo-modal" class="modal">
+        <div class="modal-content p-4">
+            <span class="close-modal">&times;</span>
+            <div id="modal-media-container" class="w-full h-full">
+                <!-- Content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark-card border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Let's Work Together</h3>
+            <p class="text-medium-text max-w-2xl mx-auto mb-8">Have a project in mind or want to collaborate? We'd love to hear from you and discuss how we can bring your ideas to life.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://github.com/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.behance.net/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/slibrit.12/" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-sm text-gray-500">© 2025 Sowendharya Nagaraj. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        
+        // Close menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) { 
+            link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); 
+        }
+
+        // Modal functionality
+        const modal = document.getElementById('demo-modal');
+        const closeModal = document.querySelector('.close-modal');
+        const modalMediaContainer = document.getElementById('modal-media-container');
+        const demoLinks = document.querySelectorAll('.demo-link');
+
+        // Open modal with appropriate content
+        demoLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const type = link.getAttribute('data-type');
+                const src = link.getAttribute('data-src');
+                
+                modalMediaContainer.innerHTML = '';
+                
+                if (type === 'image') {
+                    const img = document.createElement('img');
+                    img.src = src;
+                    img.alt = 'Demo content';
+                    img.className = 'w-full h-auto max-h-[80vh] object-contain';
+                    modalMediaContainer.appendChild(img);
+                } else if (type === 'video') {
+                    const iframe = document.createElement('iframe');
+                    iframe.src = src;
+                    iframe.className = 'w-full aspect-video';
+                    iframe.setAttribute('frameborder', '0');
+                    iframe.setAttribute('allowfullscreen', '');
+                    modalMediaContainer.appendChild(iframe);
+                }
+                
+                modal.style.display = 'flex';
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close when clicking outside modal content
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.style.display === 'flex') {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        });
+    </script>
+</body>
+</html>

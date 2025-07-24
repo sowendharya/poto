@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects | sowendharya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles & Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand-primary': '#14b8a6', // Teal 500
+                        'brand-secondary': '#0f766e', // Teal 700
+                        'dark-bg': '#111827', // Gray 900
+                        'dark-card': '#1f2937', // Gray 800
+                        'light-text': '#f3f4f6', // Gray 100
+                        'medium-text': '#9ca3af', // Gray 400
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for hover effects and navigation links */
+        .project-card { 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+        .project-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); 
+        }
+        .nav-link::after { 
+            content: ''; 
+            display: block; 
+            width: 0; 
+            height: 2px; 
+            background: #14b8a6; 
+            transition: width .3s; 
+        }
+        .nav-link:hover::after { 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-light-text font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 left-0 right-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">SN<span class="text-brand-primary">.</span></a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#home" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Home</a>
+                <a href="projects.html" class="nav-link text-white font-semibold">Projects</a>
+                <a href="work.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Work</a>
+                <a href="blog.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Blog</a>
+                <a href="index.html#about" class="nav-link text-medium-text hover:text-white transition-colors duration-300">About</a>
+                <a href="index.html#contact" class="bg-brand-primary text-white py-2 px-4 rounded-lg hover:bg-brand-secondary transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html#home" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Home</a>
+            <a href="projects.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Projects</a>
+            <a href="work.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Work</a>
+            <a href="blog.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Blog</a>
+            <a href="index.html#about" class="block py-2 px-6 text-medium-text hover:bg-dark-card">About</a>
+            <a href="index.html#contact" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20 mt-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">Our Projects</h1>
+        <p class="text-medium-text text-center max-w-2xl mx-auto mb-12">A detailed look at the applications we have designed, developed, and deployed. We take pride in delivering high-quality, scalable solutions.</p>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Project Card 1 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Project+One" alt="Eye Tracking App" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Eye Tracking App</h3>
+                    <p class="text-medium-text flex-grow">Built an app that detects eye strain and tracks screen time using image data and real-time monitoring. Suggested smart brightness levels to reduce eye stress and improve user comfort.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">OpenCV</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Computer Vision</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="https://github.com/sowendharya/Eye_Track_App" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-secondary font-semibold">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 2 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Project+Two" alt="Leave Management System" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Institutional Leave Management System</h3>
+                    <p class="text-medium-text flex-grow">Developed a web-based leave management system using HTML, CSS, JavaScript, PHP, and MySQL. Enabled employees to apply for leave and allowed management to view, approve, and track leave history easily.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="https://github.com/sowendharya/Leave_Management_System" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-secondary font-semibold">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 3 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Project+Three" alt="Restaurant Website" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Restaurant Website</h3>
+                    <p class="text-medium-text flex-grow">Building a responsive restaurant web app using Spring Boot for backend logic and MySQL for structured data storage. Integrated RESTful APIs to handle dynamic menu items, table reservations, and feedback.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">REST API</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50 flex space-x-4">
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold">Live Demo</a>
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold">View Code</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Project Card 4 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=Project+Four" alt="Drawing Board" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Drawing Board Website</h3>
+                    <p class="text-medium-text flex-grow">Built a browser-based drawing board that allows users to draw, save sketches as Base64 images, and store/retrieve them using a Spring Boot + MySQL backend with GitHub Pages frontend hosting.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50 flex space-x-4">
+                        <a href="https://sowendharya.github.io/drawing_Board/" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-secondary font-semibold">Live Demo</a>
+                        <a href="#" class="text-brand-primary hover:text-brand-secondary font-semibold">View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 5 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=UI/UX+Project" alt="Reminder Flicks" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Reminder Flicks (UI/UX)</h3>
+                    <p class="text-medium-text flex-grow">Designed an intuitive to-do list app focused on clean visuals and user-friendly task organization. Created interactive UI/UX screens using Figma to enhance task management flow.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">UX Design</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="https://www.behance.net/gallery/216957783/REMADINDER-FLICKS" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-secondary font-semibold">View on Behance</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Card 6 -->
+            <div class="project-card bg-dark-card rounded-lg overflow-hidden shadow-lg flex flex-col">
+                <img src="https://placehold.co/600x400/1f2937/f3f4f6?text=UI/UX+Case+Study" alt="Doctor's Appointment App" class="w-full h-56 object-cover">
+                <div class="p-6 flex flex-col flex-grow">
+                    <h3 class="text-xl font-bold mb-2">Doctor’s Appointment App (UI Case Study)</h3>
+                    <p class="text-medium-text flex-grow">Redesigned the Practo app using Figma to streamline doctor appointment booking with a simplified, user-centered interface. Focused on improving patient retention.</p>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Figma</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">UX Design</span>
+                        <span class="bg-gray-700 text-light-text text-xs font-medium px-2.5 py-0.5 rounded-full">Case Study</span>
+                    </div>
+                    <div class="mt-auto pt-4 border-t border-gray-700/50">
+                        <a href="https://www.behance.net/portfolio/editor?project_id=216441983" target="_blank" rel="noopener noreferrer" class="text-brand-primary hover:text-brand-secondary font-semibold">View on Behance</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+     <!-- Footer -->
+    <footer class="bg-dark-card border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Let's Work Together</h3>
+            <p class="text-medium-text max-w-2xl mx-auto mb-8">Have a project in mind or want to collaborate? We'd love to hear from you and discuss how we can bring your ideas to life.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://github.com/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.behance.net/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/slibrit.12/" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-sm text-gray-500">© 2025 Sowendharya Nagaraj. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        // Close menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); }
+    </script>
+</body>
+</html>

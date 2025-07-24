@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | sowendharya</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom Styles & Configuration for Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        'brand-primary': '#14b8a6', // Teal 500
+                        'brand-secondary': '#0f766e', // Teal 700
+                        'dark-bg': '#111827', // Gray 900
+                        'dark-card': '#1f2937', // Gray 800
+                        'light-text': '#f3f4f6', // Gray 100
+                        'medium-text': '#9ca3af', // Gray 400
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom styles for hover effects and navigation links */
+        .blog-post-link:hover .blog-post-title { 
+            color: #14b8a6; 
+        }
+        .nav-link::after { 
+            content: ''; 
+            display: block; 
+            width: 0; 
+            height: 2px; 
+            background: #14b8a6; 
+            transition: width .3s; 
+        }
+        .nav-link:hover::after { 
+            width: 100%; 
+        }
+    </style>
+</head>
+<body class="bg-dark-bg text-light-text font-sans antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-dark-bg/80 backdrop-blur-sm sticky top-0 left-0 right-0 z-50 border-b border-gray-700">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">SN<span class="text-brand-primary">.</span></a>
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="index.html#home" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Home</a>
+                <a href="projects.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Projects</a>
+                <a href="work.html" class="nav-link text-medium-text hover:text-white transition-colors duration-300">Work</a>
+                <a href="blog.html" class="nav-link text-white font-semibold">Blog</a>
+                <a href="index.html#about" class="nav-link text-medium-text hover:text-white transition-colors duration-300">About</a>
+                <a href="index.html#contact" class="bg-brand-primary text-white py-2 px-4 rounded-lg hover:bg-brand-secondary transition-colors duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg></button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden">
+            <a href="index.html#home" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Home</a>
+            <a href="projects.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Projects</a>
+            <a href="work.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Work</a>
+            <a href="blog.html" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Blog</a>
+            <a href="index.html#about" class="block py-2 px-6 text-medium-text hover:bg-dark-card">About</a>
+            <a href="index.html#contact" class="block py-2 px-6 text-medium-text hover:bg-dark-card">Contact</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-20 mt-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">The Blog</h1>
+        <p class="text-medium-text text-center max-w-2xl mx-auto mb-12">Sharing knowledge and insights on design, development, and the tech world.</p>
+        
+        <div class="max-w-3xl mx-auto space-y-12">
+            <!-- Blog Post 1 -->
+            <a href="https://medium.com/@sowendharya36/b2b-customer-touchpoints-and-their-types-9e32cb70b15c" target="_blank" rel="noopener noreferrer" class="blog-post-link block group">
+                <p class="text-medium-text text-sm mb-1">August 21, 2024</p>
+                <h2 class="blog-post-title text-2xl md:text-3xl font-bold mb-2 transition-colors duration-300">Basic Figma Plugin and How I used those in my projects.</h2>
+                <p class="text-medium-text mb-3">Blog on Basic Figma Plugins and How I Used Them in My Projects, showcasing beginner-friendly tools to speed up design workflows. Shared real examples of how plugins like Iconify and Unsplash enhanced my UI/UX designs.</p>
+                <span class="text-brand-primary font-semibold group-hover:text-brand-secondary">Read More &rarr;</span>
+            </a>
+            <!-- Blog Post 2 -->
+            <a href="https://medium.com/@sowendharya36/understanding-layers-in-figma-575027663098" target="_blank" rel="noopener noreferrer" class="blog-post-link block group">
+                <p class="text-medium-text text-sm mb-1">March 24, 2025</p>
+                <h2 class="blog-post-title text-2xl md:text-3xl font-bold mb-2 transition-colors duration-300">Understanding Layers in Figma</h2>
+                <p class="text-medium-text mb-3">Wrote a Medium blog titled Understanding Layers in Figma, simplifying how layers, frames, and groups work for beginner UI/UX designers. Shared practical tips to organize and structure designs efficiently.</p>
+                <span class="text-brand-primary font-semibold group-hover:text-brand-secondary">Read More &rarr;</span>
+            </a>
+            <!-- Blog Post 3 -->
+            <a href="https://medium.com/@sowendharya36/b2b-customer-touchpoints-and-their-types-9e32cb70b15c" target="_blank" rel="noopener noreferrer" class="blog-post-link block group">
+                <p class="text-medium-text text-sm mb-1">Nov 25, 2024</p>
+                <h2 class="blog-post-title text-2xl md:text-3xl font-bold mb-2 transition-colors duration-300">B2B Customer Touchpoints and their Types</h2>
+                <p class="text-medium-text mb-3">Authored a Medium blog on B2B Customer Touchpoints and their Types, explaining key interaction stages between businesses and their clients. Highlighted touchpoint strategies across marketing, sales, onboarding, and support.</p>
+                <span class="text-brand-primary font-semibold group-hover:text-brand-secondary">Read More &rarr;</span>
+            </a>
+        </div>
+    </main>
+
+      <!-- Footer -->
+    <footer class="bg-dark-card border-t border-gray-700 mt-20">
+        <div class="container mx-auto px-6 py-12 text-center">
+            <h3 class="text-2xl md:text-3xl font-bold mb-4 text-white">Let's Work Together</h3>
+            <p class="text-medium-text max-w-2xl mx-auto mb-8">Have a project in mind or want to collaborate? We'd love to hear from you and discuss how we can bring your ideas to life.</p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://github.com/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.behance.net/sowendharya" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-behance"></i></a>
+                <a href="https://www.instagram.com/slibrit.12/" class="text-medium-text hover:text-brand-primary text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="text-sm text-gray-500">© 2025 Sowendharya Nagaraj. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        // Close menu when a link is clicked
+        const mobileMenuLinks = mobileMenu.getElementsByTagName('a');
+        for (let link of mobileMenuLinks) { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); }
+    </script>
+</body>
+</html>
